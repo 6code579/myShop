@@ -4,7 +4,7 @@ const Banner: React.FC = () => {
     return (
         <>
             {/* Main */}
-            <main className="flex flex-col md:flex-row items-center max-md:text-center justify-between mt-16 pb-16 px-6 sm:px-10 md:px-24 max-w-7xl mx-auto w-full">
+            <main className="flex flex-col md:flex-row items-center max-md:text-center justify-between mt-12 pb-8 px-6 sm:px-10 md:px-24 max-w-7xl mx-auto w-full">
                 {/* Texte */}
                 <div className="flex flex-col items-center md:items-start">
                     <h1 className="text-gray-900 font-bold text-3xl sm:text-4xl md:text-5xl max-w-2xl leading-tight">
@@ -34,7 +34,7 @@ const Banner: React.FC = () => {
                 </div>
 
                 {/* Image produit */}
-                <div className="mt-12 md:mt-0 md:ml-12 flex justify-center">
+                <div className="mt-8  md:mt-0 md:ml-12 flex justify-center">
                     <img
                         src="banner.png"
                         alt="Produit phare"

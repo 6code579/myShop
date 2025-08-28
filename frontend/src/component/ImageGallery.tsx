@@ -11,9 +11,9 @@ const ImageGallery: React.FC = () => {
   const [mainImage, setMainImage] = useState<string>(thumbnails[0]);
 
   return (
-    <div className="flex flex-col items-center space-y-4">
+    <div className="flex flex-col items-center space-y-4 p-4 md:p-6">
       {/* Image principale */}
-      <div className="w-full max-w-6xl ">
+      <div className="w-full max-w-5xl ">
         <img
           src={mainImage}
           alt="Main"

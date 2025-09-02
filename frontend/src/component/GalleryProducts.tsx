@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Button from "./Button";
+import { Eye } from "lucide-react";
 interface GalleryItem {
+    id: number;
     image: string;
     price: string | number;
     description: string;
@@ -13,10 +15,10 @@ interface GalleryProps {
     heading?: string;
     description?: string;
     items: GalleryItem[];
-    link?: string;
+   
 }
 
-const GalleryProducts: React.FC<GalleryProps> = ({ heading, description, items, link }) => {
+const GalleryProducts: React.FC<GalleryProps> = ({ heading, description, items }) => {
     return (
         <div className="px-4 py-12">
             {/* Heading */}
@@ -34,30 +36,29 @@ const GalleryProducts: React.FC<GalleryProps> = ({ heading, description, items, 
                 {items.map((item, index) => (
                     <div
                         key={index}
-                        className="relative group rounded-lg overflow-hidden border border-gray-200 shadow-md bg-white"
+                        className="relative group rounded-lg overflow-hidden border border-gray-100 shadow-md bg-white"
                     >
                         {/* Image container */}
-                        <div className="w-full h-32 md:h-56 flex items-center justify-center">
+                        <div className="w-full h-32 md:h-56 flex items-center justify-center bg-white">
                             <img
-                                src={item.image ? item.image : item.link}
-                                alt={item.name}
-                                className="max-w-full  object-cover md:object-contain"
+                                src={item.link || item.image || "/default.png"}
+                                alt={item.name || "Produit"}
+                                className="max-w-full h-full object-cover md:object-contain"
                             />
+                           
+
                         </div>
+                        
 
                         {/* Overlay hover */}
                         <div className="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
                             <span className="text-lg font-bold text-sky-400">{item.price} MAD</span>
                             <h1 className="text-base font-medium">{item.name}</h1>
                             <p className="text-sm hidden md:block">{item.description}</p>
-                            {link && (
-                                <Link to={link}>
-                                    <button
-                                        type="button"
-                                        className="mt-2 px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition"
-                                    >
-                                        Commander
-                                    </button>
+                            {item.id && (
+                                <Link to={`/products/${item.id}`}>
+                                      <Button label={<span className="flex items-center gap-1"><Eye className="w-4" /> voir</span>}  changeColor/>
+
                                 </Link>
                             )}
                         </div>

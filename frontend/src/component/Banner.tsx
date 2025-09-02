@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 const Banner: React.FC = () => {
     return (
         <>
@@ -19,22 +20,22 @@ const Banner: React.FC = () => {
 
                     <div className="flex flex-col md:flex-row items-center mt-8 gap-3">
                         <Link
-                            className="bg-indigo-600 text-white px-6 py-3 rounded-full text-sm font-medium flex items-center space-x-2 hover:bg-indigo-700 transition"
+                           
                             to="/products"
                         >
-                            Voir les produits
+                            <Button label="Voir les produits" changeColor/>
                         </Link>
                         <Link
-                            className="text-indigo-600 bg-indigo-100 px-6 py-3 rounded-full text-sm font-medium hover:bg-indigo-200 transition"
+                           
                             to="/contact"
                         >
-                            Contactez-nous
+                           <Button label="Contactez nous"/>
                         </Link>
                     </div>
                 </div>
 
                 {/* Image produit */}
-                <div className="mt-8  md:mt-0 md:ml-12 flex justify-center">
+                <div className="mt-8 hidden md:block md:mt-0 md:ml-12 flex justify-center">
                     <img
                         src="banner.png"
                         alt="Produit phare"

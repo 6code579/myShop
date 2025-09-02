@@ -6,6 +6,7 @@ import GalleryProducts from "../component/GalleryProducts";
 
 interface Product {
   name: string;
+  id:number;
   description: string;
   price: number;
   image: string;
@@ -33,7 +34,7 @@ const Home: React.FC = () => {
       <GalleryProducts
         heading="Our Latest Creations"
         description="A visual collection of our most recent works - each piece crafted with intention, emotion, and style."
-        items={products}  link="#"
+        items={products}  
       />
       
 

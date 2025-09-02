@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import Prices from "./pages/Prices";
 import About from "./pages/About";
 import ProductDetail from "./pages/ProductDetail";
+import ProductUpdate from "./pages/ProductUpdate";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           
           <Route index element={<Home />} />
           <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/products/edit/:id" element={<ProductUpdate />} />
           <Route path="/a-propos" element={<About />} />
           <Route path="/prix" element={<Prices />} />
           <Route path="/contact" element={<Contact />} />

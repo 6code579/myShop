@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
             menuOpen ? "max-md:w-full max-md:h-full" : "max-md:w-0"
           }`}
         >
-          <Link className="hover:text-indigo-600" to="/">
+          <Link className="hover:text-indigo-600" to="/products">
             Produits
           </Link>
           <Link className="hover:text-indigo-600" to="/a-propos">
